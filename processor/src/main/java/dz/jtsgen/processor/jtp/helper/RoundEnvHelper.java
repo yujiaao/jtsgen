@@ -33,8 +33,8 @@ import java.util.stream.Collectors;
  * some temporary helper
  */
 public abstract class RoundEnvHelper {
-    
-    public static Set<Element> filteredTypeSriptElements(RoundEnvironment roundEnv) {
+
+    public static Set<Element> filteredTypeScriptElements(RoundEnvironment roundEnv) {
         final String tsIgnoreSimpleName = TSIgnore.class.getSimpleName();
         return roundEnv.getElementsAnnotatedWith(TypeScript.class).<Element>stream()
                 .filter(

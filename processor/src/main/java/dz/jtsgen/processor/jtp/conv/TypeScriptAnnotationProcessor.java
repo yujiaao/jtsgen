@@ -30,7 +30,7 @@ import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import static dz.jtsgen.processor.jtp.helper.RoundEnvHelper.filteredTypeSriptElements;
+import static dz.jtsgen.processor.jtp.helper.RoundEnvHelper.filteredTypeScriptElements;
 import static java.util.Collections.singletonList;
 
 /**
@@ -57,10 +57,11 @@ public class TypeScriptAnnotationProcessor implements JavaTypeProcessor {
 
     @Override
     public void processAnnotations(RoundEnvironment roundEnv) {
-          this.processElements(
+
+        this.processElements(
                 Sets.union(
                         this.processingInfo.additionalTypesToConvert(),
-                        filteredTypeSriptElements(roundEnv)
+                        filteredTypeScriptElements(roundEnv)
                 ));
     }
 
@@ -70,7 +71,10 @@ public class TypeScriptAnnotationProcessor implements JavaTypeProcessor {
         TSAVisitor tsaVisitor = new TSAVisitor();
         for (Element e : elements) {
             tsaVisitor.visit(e, javaConverter).ifPresent(x -> {
+                        String comment = processingInfo.getpEnv().getElementUtils().getDocComment(e);
                         processingInfo.getTsModel().addTSTypes(singletonList(x));
+
+
                         LOG.log(Level.FINEST, () -> String.format("TSAP added %s to model", x.toString()));
                     }
             );

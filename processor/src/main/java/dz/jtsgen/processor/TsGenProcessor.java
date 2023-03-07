@@ -47,7 +47,8 @@ import java.util.Set;
 import java.util.logging.Logger;
 
 import static dz.jtsgen.processor.helper.ElementHelper.typeOf;
-import static dz.jtsgen.processor.jtp.helper.RoundEnvHelper.filteredTypeSriptElements;
+import static dz.jtsgen.processor.jtp.helper.RoundEnvHelper.filteredTypeScriptElements;
+
 import static dz.jtsgen.processor.model.TypeScriptModel.newModelWithDefaultModule;
 import static java.util.logging.Level.INFO;
 
@@ -150,8 +151,9 @@ public class TsGenProcessor extends AbstractProcessorWithLogging {
     // process TypeScript Annotation this is after processing @TSModule
     private void processTypeScriptAnnotation(TypeElement annotation, RoundEnvironment roundEnv) {
 
+
         // ignore classes with TSIgnore
-        Set<Element> annotatedElements = filteredTypeSriptElements(roundEnv);
+        Set<Element> annotatedElements = filteredTypeScriptElements(roundEnv);
 
         // this is needed for updating data from CLI and calculating a name space mapping, if needed
         new TSModuleInfoEnforcer(this.processingEnv, this.typeScriptModel).createUpdatedTSModuleInfo(annotatedElements).ifPresent(x -> {

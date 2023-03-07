@@ -26,8 +26,20 @@ import dz.jtsgen.annotations.TypeScript;
  * Person Test Class
  */
 @TypeScript
+/**
+ * 人 - 苦逼玩艺！
+ */
 public class Person {
+
+    /**
+     * name 名字
+     */
     private final String name;
+
+    /**
+     * mail 油箱
+     */
+
     private final String mail;
 
     public Person(String name, String mail) {
