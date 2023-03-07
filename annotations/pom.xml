@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.github.dzuvic</groupId>
+        <artifactId>jtsgen-parent</artifactId>
+        <version>0.6.0</version>
+    </parent>
+    <groupId>com.github.dzuvic</groupId>
+    <artifactId>annotations</artifactId>
+    <version>0.6.0</version>
+    <name>JTSGEN Annotations</name>
+    <description>The Annotation an other Types for the jtsgen annotation processor</description>
+    <url>http://jtsgen.readthedocs.io</url>
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <id>dzuvic</id>
+            <name>Dragan Zuvic</name>
+            <email>git.zuvic@posteo.de</email>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:https://github.com/dzuvic/jtsgen.git</connection>
+        <developerConnection>scm:git:https://github.com/dzuvic/jtsgen.git</developerConnection>
+        <url>https://github.com/dzuvic/jtsgen.git</url>
+    </scm>
+</project>

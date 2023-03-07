@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.github.dzuvic</groupId>
+        <artifactId>jtsgen-parent</artifactId>
+        <version>0.6.0</version>
+    </parent>
+
+    <groupId>com.github.dzuvic</groupId>
+    <artifactId>processor</artifactId>
+    <version>0.6.0</version>
+    <name>JTSGEN java processor</name>
+    <description>An annotation processor, that created TypeScript types from Java</description>
+    <url>http://jtsgen.readthedocs.io</url>
+    <licenses>
+        <license>
+            <name>GNU General Public License (GPL) version 3.0</name>
+            <url>https://www.gnu.org/licenses/gpl-3.0.txt</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <id>dzuvic</id>
+            <name>Dragan Zuvic</name>
+            <email>git.zuvic@posteo.de</email>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:https://github.com/dzuvic/jtsgen.git</connection>
+        <developerConnection>scm:git:https://github.com/dzuvic/jtsgen.git</developerConnection>
+        <url>https://github.com/dzuvic/jtsgen.git</url>
+    </scm>
+    <dependencies>
+        <dependency>
+            <groupId>com.github.dzuvic</groupId>
+            <artifactId>annotations</artifactId>
+            <version>${project.version}</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.immutables</groupId>
+            <artifactId>value</artifactId>
+            <scope>provided</scope>
+            <version>2.9.2</version>
+        </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>org.immutables</groupId>-->
+<!--            <artifactId>builder</artifactId>-->
+<!--            <scope>provided</scope>-->
+<!--        </dependency>-->
+
+        <dependency>
+            <groupId>org.apiguardian</groupId>
+            <artifactId>apiguardian-api</artifactId>
+            <version>${apiGuardianVersion}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junitJupiterVersion}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junitJupiterVersion}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.testing.compile</groupId>
+            <artifactId>compile-testing</artifactId>
+            <version>${compileTestingVersion}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockitoVersion}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commonsIoVersion}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.mifmif</groupId>
+            <artifactId>generex</artifactId>
+            <version>${generexVersion}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4jVersion}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-jul</artifactId>
+            <version>${log4jVersion}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.immutables</groupId>
+            <artifactId>value</artifactId>
+            <scope>annotationProcessor</scope>
+        </dependency>
+
+    </dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.immutables</groupId>
+                <artifactId>bom</artifactId>
+                <version>${immutablesVersion}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.10.1</version>
+                <configuration>
+<!--                    &lt;!&ndash; Prevents an endPosTable exception during compilation &ndash;&gt;-->
+<!--                    <generatedSourcesDirectory>src/main/generated</generatedSourcesDirectory>-->
+<!--                    <generatedTestSourcesDirectory>src/test/generated</generatedTestSourcesDirectory>-->
+<!--                    <useIncrementalCompilation>false</useIncrementalCompilation>-->
+                </configuration>
+<!--                <annotationProcessors>-->
+<!--                    <annotationProcessor>-->
+<!--                        dz.jtsgen.processor.TsGenProcessor-->
+<!--                    </annotationProcessor>-->
+<!--                </annotationProcessors>-->
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
